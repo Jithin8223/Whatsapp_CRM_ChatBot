@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Support customers through WhatsApp, approved answers, and a shared team inbox.">
+<title>Relay CRM | Customer Support</title>
+<link rel="icon" href="http://localhost:5173/relay-icon.svg" type="image/svg+xml">
+<style>
+:root{color-scheme:light;--ink:#12372d;--muted:#486258;--green:#07533e;--line:#dce9e2;--mint:#eef8f2;--paper:#f8fbf8;--radius:24px;font:16px/1.55 system-ui,"Segoe UI",sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink)}
+a{color:inherit;text-decoration:none}button{font:inherit}button,a{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible{outline:3px solid #248869;outline-offset:4px}
+h1,h2,h3,p{margin:0}p{color:var(--muted)}h1,h2{letter-spacing:-.05em;line-height:1.05}h3{letter-spacing:-.025em}
+.container{width:min(1216px,calc(100% - 64px));margin:auto}
+.navbar{background:#fff;border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:76px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-size:19px;font-weight:750;white-space:nowrap;letter-spacing:-.04em}.logo-mark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:#07533e;color:#fff;font-size:23px}
+nav{display:flex;align-items:center;gap:28px;color:#39554b;font-size:14px;font-weight:600}nav a:hover,footer a:hover{color:#008259}
+.btn{display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:46px;padding:10px 18px;border-radius:11px;border:1px solid transparent;font-size:14px;font-weight:720;cursor:pointer;transition:background .16s,transform .16s}
+.btn[aria-disabled="true"]{opacity:.65;cursor:default}.btn:not([aria-disabled="true"]):hover{transform:translateY(-2px)}.btn.primary{background:var(--green);color:white}.btn.primary:hover{background:#0a6b51}.btn.secondary{background:white;border-color:#cbded3;color:var(--green)}
+.hero{background:radial-gradient(ellipse at 85% 22%,#d9f2e3,transparent 56%),linear-gradient(#f9fdf9,#f0f7f1);border-bottom:1px solid var(--line)}
+.hero-inner{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);align-items:center;gap:42px;padding-block:88px 94px}
+h1{font-size:clamp(44px,5vw,73px);max-width:650px;font-weight:760}.hero p{font-size:18px;margin-top:24px;max-width:420px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:29px}
+.dashboard{border:1px solid #cfdfd5;background:#fff;border-radius:22px;padding:17px;box-shadow:0 22px 64px #173d2820;min-width:0}
+.dash-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:2px 2px 15px;font-size:14px}.dash-head strong{font-size:16px}.sample{font-size:11px;color:var(--green);background:#e8f5ed;padding:4px 9px;border-radius:20px}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.metric{padding:9px;background:#f7fbf8;border:1px solid var(--line);border-radius:11px;font-size:10px;color:var(--muted);display:flex;flex-direction:column;justify-content:space-between;min-height:67px}.metric strong{font-size:21px;line-height:1.2;color:var(--ink)}
+.dash-body{display:grid;grid-template-columns:1.05fr 1fr;gap:8px;margin-top:10px}.preview-card{padding:12px;border:1px solid var(--line);border-radius:12px;min-width:0}.preview-card h2{font-size:13px;letter-spacing:0}.chart{display:flex;align-items:end;justify-content:space-between;gap:6px;height:102px;border-bottom:1px solid var(--line);margin-top:12px;padding:0 4px}.chart span{width:11%;height:var(--h);background:linear-gradient(#368f6a,#b8e2cb);border-radius:5px 5px 0 0}.days{display:flex;justify-content:space-between;color:var(--muted);font-size:9px;margin-top:4px}
+.inbox-list{list-style:none;margin:6px 0 0;padding:0}.inbox-list li{display:flex;align-items:center;gap:7px;padding:7px 0;border-bottom:1px solid var(--line);font-size:11px}.inbox-list li:last-child{border:0}.inbox-list strong,.inbox-list small{display:block}.inbox-list small{color:var(--muted);font-size:9px}.mini-avatar{display:grid;place-items:center;background:#e6f4eb;color:#07533e;width:23px;height:23px;border-radius:8px;flex:none;font-weight:750}
+.section{padding-block:76px}.section h2{font-size:clamp(32px,4vw,48px);max-width:660px}.section-intro{margin-top:12px}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:28px}.card{padding:22px;border:1px solid var(--line);border-radius:var(--radius);background:#fff;transition:transform .16s,box-shadow .16s}.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px #174e3912}.card p{margin-top:7px;font-size:14px}.card-icon{width:38px;height:38px;display:grid;place-items:center;background:#e6f4eb;color:var(--green);border-radius:11px;font-size:19px;margin-bottom:12px}
+.how{background:#eaf5ee;border-block:1px solid var(--line)}.steps{list-style:none;counter-reset:step;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.steps li{background:white;border:1px solid var(--line);border-radius:17px;padding:17px;font-size:14px;font-weight:650}.steps li::before{counter-increment:step;content:counter(step);display:grid;place-items:center;background:#e4f2e9;border-radius:50%;width:28px;height:28px;margin-bottom:8px}
+.support{background:#104737;border-radius:26px;color:white;padding:clamp(24px,5vw,58px);display:flex;align-items:center;justify-content:space-between;gap:22px}.support p{color:#d4e7df;margin-top:12px}.support .btn{flex:none}
+footer{border-top:1px solid var(--line);padding:27px 0 94px;background:white}footer .container{display:flex;align-items:center;justify-content:space-between;gap:18px}footer p{font-size:13px}
+@media(max-width:960px){.hero-inner{grid-template-columns:1fr;padding-block:60px;gap:34px}.dashboard{max-width:670px}}
+@media(max-width:660px){.container{width:calc(100% - 36px)}.nav{flex-wrap:wrap;gap:10px;padding-block:12px}.nav nav{width:100%;order:1;justify-content:space-between;gap:12px}.nav .btn{min-height:38px;padding:5px 12px}.section{padding-block:47px}.cards,.steps{grid-template-columns:repeat(2,minmax(0,1fr))}.support{align-items:start;flex-direction:column}.hero-inner{padding-block:44px}}
+@media(max-width:400px){.metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard{padding:10px}.preview-card{padding:8px}.card{padding:15px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body id="home">
+<header class="navbar"><div class="container nav">
+<a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">r.</span> Relay CRM</a>
+<nav aria-label="Primary"><a href="#home">Home</a><a href="#features">Features</a><a href="#solutions">Solutions</a><a href="#support">Support</a></nav>
+<a class="btn primary" href="http://localhost:5173/">Get Started <span aria-hidden="true">↗</span></a>
+</div></header>
+<main>
+<section class="hero"><div class="container hero-inner">
+<div><h1>Smarter Customer Conversations Start Here</h1>
+<p>Give customers quick answers with AI-powered support and let your team step in from one shared inbox.</p>
+<div class="actions"><a class="btn primary" href="#features">Explore Features <span aria-hidden="true">↓</span></a><a class="btn secondary" data-whatsapp-link aria-disabled="true" target="_blank" rel="noopener noreferrer">Open WhatsApp</a></div></div>
+<figure class="dashboard" aria-label="Example support dashboard" style="margin:0">
+<div class="dash-head"><strong>Support overview</strong><span class="sample">Illustrative data</span></div>
+<div class="metrics">
+<div class="metric">Total conversations<strong>1,248</strong></div><div class="metric">AI-resolved conversations<strong>896</strong></div><div class="metric">Active support agents<strong>12</strong></div><div class="metric">Average response time<strong>28s</strong></div>
+</div>
+<div class="dash-body">
+<section class="preview-card"><h2>Conversation activity</h2><div class="chart" role="img" aria-label="Illustrative conversation volume, Monday to Sunday">
+<span style="--h:38%"></span><span style="--h:55%"></span><span style="--h:48%"></span><span style="--h:77%"></span><span style="--h:63%"></span><span style="--h:92%"></span><span style="--h:75%"></span></div>
+<div class="days" aria-hidden="true"><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span><span>S</span></div></section>
+<section class="preview-card"><h2>Sample inbox</h2><ul class="inbox-list">
+<li><span class="mini-avatar" aria-hidden="true">W</span><div><strong>WhatsApp customer</strong><small>Question about services</small></div></li>
+<li><span class="mini-avatar" aria-hidden="true">W</span><div><strong>WhatsApp customer</strong><small>Waiting for an agent</small></div></li>
+<li><span class="mini-avatar" aria-hidden="true">W</span><div><strong>WhatsApp customer</strong><small>Answered from knowledge</small></div></li>
+</ul></section></div></figure>
+</div></section>
+<section class="section container" id="features"><h2>One workspace for customer support</h2>
+<div class="cards">
+<article class="card"><span class="card-icon" aria-hidden="true">✦</span><h3>AI-powered customer support</h3><p>Answer common questions with approved business knowledge.</p></article>
+<article class="card"><span class="card-icon" aria-hidden="true">◌</span><h3>Live human chat</h3><p>Take over directly in the customer’s conversation.</p></article>
+<article class="card"><span class="card-icon" aria-hidden="true">▤</span><h3>Unified CRM inbox</h3><p>Find conversations, review history, and assign an agent.</p></article>
+<article class="card"><span class="card-icon" aria-hidden="true">▣</span><h3>Business knowledge base</h3><p>Maintain approved answers and organize them by topic.</p></article>
+<article class="card"><span class="card-icon" aria-hidden="true">⇄</span><h3>Automated workflows</h3><p>Collect issue details and route requests to your team.</p></article>
+<article class="card"><span class="card-icon" aria-hidden="true">↗</span><h3>WhatsApp contact</h3><p>Let visitors open a chat with your configured business number.</p></article>
+</div></section>
+<section class="section how" id="solutions"><div class="container"><h2>How it works</h2><ol class="steps">
+<li>The customer opens WhatsApp.</li><li>The assistant answers from approved knowledge.</li><li>An agent takes over when needed.</li><li>The conversation stays available in the CRM.</li>
+</ol></div></section>
+<section class="section container" id="support"><div class="support"><div><h2>Have a question?</h2><p>Open WhatsApp to ask a question or request a support agent.</p><p role="status" data-whatsapp-status>Loading WhatsApp contact…</p></div><a class="btn secondary" data-whatsapp-link aria-disabled="true" target="_blank" rel="noopener noreferrer">Open WhatsApp</a></div></section>
+</main>
+<footer><div class="container"><a class="logo" href="#home"><span class="logo-mark" aria-hidden="true">r.</span> Relay CRM</a><p>WhatsApp support and shared inbox</p></div></footer>
+<script id="relay-widget" src="http://localhost:5173/whatsapp-link.js" data-widget-key="2db91b47-401f-4f48-9b4a-ff74375bac77" async></script>
+
+</body>
+</html>
